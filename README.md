@@ -76,6 +76,31 @@ ping <SECONDARY_PRIVATE_IP>
 ping <TERTIARY_PRIVATE_IP>
 ```
 
+## Proof of Connectivity
+
+**VPC consoles, each region confirming its assigned CIDR block:**
+
+| Primary | Secondary | Tertiary |
+|---|---|---|
+| ![Primary CIDR](docs/screenshots/primary-vpc-cidr.png) | ![Secondary CIDR](docs/screenshots/secondary-vpc-cidr.png) | ![Tertiary CIDR](docs/screenshots/tertiary-vpc-cidr.png) |
+
+**Active peering connections:**
+
+![Primary–Secondary peering](docs/screenshots/primary-vpc-peering-connections.png)
+![Secondary peering](docs/screenshots/secondary-vpc-peering-connections.png)
+![Primary–Tertiary peering](docs/screenshots/primary-tertiary-peering-connections.png)
+
+**Route tables, showing peering routes alongside the default internet route:**
+
+| Primary | Secondary | Tertiary |
+|---|---|---|
+| ![Primary route table](docs/screenshots/primary-route-table.png) | ![Secondary route table](docs/screenshots/secondary-route-table.png) | ![Tertiary route table](docs/screenshots/tertiary-route-table.png) |
+
+**Live ping tests across peered VPCs (private IPs, cross-region):**
+
+![Ping Primary to Secondary](docs/screenshots/ping-a-to-b.png)
+![Ping Primary to Tertiary](docs/screenshots/ping-a-to-c.png)
+
 ## Issues Hit and Fixed During Build
 
 **1. `InvalidClientTokenId` on `terraform plan`**
